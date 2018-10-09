@@ -1,0 +1,74 @@
+package com.hpe.training.programs;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.hpe.training.entity.Brand;
+import com.hpe.training.entity.Product;
+import com.hpe.training.utils.HibernateUtil;
+
+@SuppressWarnings("unchecked")
+public class P12_HQLDemos {
+
+	private static Session session;
+	
+	public static void main(String[] args) {
+		SessionFactory factory = null;
+		try {
+			factory = HibernateUtil.getSessionFactory();
+			session = factory.openSession();
+			
+			// printAllBrands();
+			// printProductsByPriceRange(40.0, 50.0);
+			printProductsByPage(3); // 3 --> pageNum
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+			factory.close();
+		}
+	}
+
+	static void printProductsByPage(int pageNum) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	static void printProductsByPriceRange(double min, double max) {
+		String hql = "FROM Product WHERE unitPrice BETWEEN ? AND ? ORDER BY unitPrice DESC";
+		Query qry = session.createQuery(hql);
+		qry.setDouble(0, min);
+		qry.setDouble(1, max);
+		List<Product> list = qry.list();
+		for(Product p: list) {
+			System.out.println(p.getName() + " --> Rs." + p.getUnitPrice());
+		}
+	}
+
+	static void printAllBrands() {
+		// HQL --> same as SQL but deals with classes and fields
+		// A row in a table --> an object of the class
+		// A column in a table --> a field/property of the class
+		// SQL --> select * from brands
+		// HQL --> select b from Brand b
+		// Simplified version --> from Brand
+		String hql = "from Brand";
+		Query qry = session.createQuery(hql);
+		
+		List<Brand> list = qry.list();
+		for(Brand b: list) {
+			System.out.println(b.getId() + " --> " + b.getName());
+		}
+	}
+	
+}
+
+
+
+
+

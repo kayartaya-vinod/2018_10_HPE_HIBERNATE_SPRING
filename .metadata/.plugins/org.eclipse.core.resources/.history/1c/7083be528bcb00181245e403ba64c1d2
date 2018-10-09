@@ -1,0 +1,29 @@
+package com.hpe.training.programs;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.hpe.training.utils.HibernateUtil;
+
+public class P12_HQLDemos {
+
+	private static Session session;
+	
+	public static void main(String[] args) {
+		SessionFactory factory = null;
+		try {
+			factory = HibernateUtil.getSessionFactory();
+			session = factory.openSession();
+			
+			
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+			factory.close();
+		}
+	}
+	
+}

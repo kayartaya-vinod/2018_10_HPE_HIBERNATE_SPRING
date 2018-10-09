@@ -47,6 +47,6 @@ public class Product {
 	private String description;
 
 	public Product() {
-		System.out.println(">>>>> Product instnace created!");
+		System.out.println("Product instnace created!");
 	}
 }

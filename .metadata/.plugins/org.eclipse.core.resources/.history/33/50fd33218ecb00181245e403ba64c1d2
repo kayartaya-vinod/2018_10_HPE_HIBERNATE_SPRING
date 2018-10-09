@@ -9,11 +9,13 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -40,13 +42,18 @@ public class Product {
 
 	@Column(name = "quantity_per_unit")
 	private String quantityPerUnit;
-	@Column(name = "unit_price")
+	// @Column(name = "unit_price")
+	@Transient
 	private Double unitPrice;
 	private String picture;
 	private Double discount;
 	private String description;
-
-	public Product() {
-		System.out.println(">>>>> Product instnace created!");
+	
+	public void setPrice(Double price) {
+		unitPrice = price;
 	}
+	public Double getPrice() {
+		return unitPrice
+	}
+
 }
