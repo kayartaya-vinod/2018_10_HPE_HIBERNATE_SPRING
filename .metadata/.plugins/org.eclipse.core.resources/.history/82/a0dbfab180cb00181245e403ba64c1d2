@@ -1,0 +1,5 @@
+package com.hpe.training.entity;
+
+public class Skill {
+
+}

@@ -1,0 +1,27 @@
+package com.hpe.training.programs;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.hpe.training.entity.Brand;
+import com.hpe.training.utils.HibernateUtil;
+
+public class P01_GetOneBrand {
+
+	public static void main(String[] args) {
+		// a SessionFactory represents the database
+		SessionFactory factory = HibernateUtil.getSessionFactory();
+		
+		// Session represents a DB connection
+		Session session = factory.openSession();
+		
+		System.out.println("Pass-1...");
+		Brand b = (Brand) session.load(Brand.class, 12);
+		System.out.println("Pass-2...");
+		session.close();
+		factory.close();
+		
+		System.out.println("Brand is: " + b);
+	}
+
+}

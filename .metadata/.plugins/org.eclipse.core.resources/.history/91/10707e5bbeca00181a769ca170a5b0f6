@@ -1,0 +1,25 @@
+package com.hpe.training.programs;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.hpe.training.utils.HibernateUtil;
+
+public class P03_FetchAndUpdateBrand {
+
+	public static void main(String[] args) {
+		SessionFactory factory = null;
+		Session session = null;
+
+		try {
+			factory = HibernateUtil.getSessionFactory();
+			session = factory.openSession();
+		} catch (HibernateException e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+			factory.close();
+		}
+	}
+}

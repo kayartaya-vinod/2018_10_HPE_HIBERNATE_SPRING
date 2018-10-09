@@ -1,0 +1,49 @@
+package com.hpe.training.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "brands")
+public final class Brand {
+	
+	// by default Hibernate maps all the fields of this class to
+	// respective columns of the corresponding table (brands)
+	
+	@Id // mapping the primary (candidate) key
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer id;
+	private String name;
+
+	public Brand() {
+	}
+
+	public Brand(String name) {
+		this.name = name;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "Brand [id=" + id + ", name=" + name + "]";
+	}
+
+}

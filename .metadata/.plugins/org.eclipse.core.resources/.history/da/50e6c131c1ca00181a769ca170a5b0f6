@@ -1,0 +1,39 @@
+package com.hpe.training.programs;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.hpe.training.entity.Brand;
+import com.hpe.training.utils.HibernateUtil;
+
+public class P04_DifferenceBetweenUpdateAndMerge {
+	public static void main(String[] args) {
+		SessionFactory factory = null;
+		Session session = null;
+		Transaction tx = null;
+		
+		try {
+			factory = HibernateUtil.getSessionFactory();
+			session = factory.openSession(); // 1st session
+			tx = session.beginTransaction();
+			
+			// b1 is a persistent object
+			Brand b1 = (Brand) session.get(Brand.class, 7);
+			
+			session.close();
+			// session (db connection) is closed, but b1 still 
+			// exists in the JVM
+			
+			
+			tx.commit();
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			tx.rollback();
+		} finally {
+			session.close();
+			factory.close();
+		}
+	}
+}

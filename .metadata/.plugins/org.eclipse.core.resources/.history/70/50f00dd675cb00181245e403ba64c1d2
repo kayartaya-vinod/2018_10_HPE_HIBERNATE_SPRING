@@ -1,0 +1,18 @@
+package com.hpe.training.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+public class Laptop {
+	@Id
+	private String serialNumber;
+	private String make;
+	private String model;
+	
+}

@@ -1,0 +1,37 @@
+package com.hpe.training.programs;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.hpe.training.entity.Employee;
+import com.hpe.training.entity.Skill;
+import com.hpe.training.utils.HibernateUtil;
+
+public class P11_GetEmployeeSkills {
+	public static void main(String[] args) {
+		SessionFactory factory = null;
+		Session session = null;
+		
+		try {
+			factory = HibernateUtil.getSessionFactory();
+			session = factory.openSession();
+			
+			Employee e1 = (Employee) session.get(Employee.class, 3);
+			System.out.println("Name = " + e1.getName());
+			System.out.println("Dept = " + e1.getDepartment());
+			System.out.println("Slry = " + e1.getSalary());
+			System.out.println("Enployee skills: ");
+			for(Skill s: e1.getSkills()) {
+				System.out.println(s.getName());
+			}
+			
+			
+		} catch (HibernateException e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+			factory.close();
+		}
+	}
+}

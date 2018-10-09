@@ -1,0 +1,47 @@
+package com.hpe.training.programs;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.hpe.training.entity.Employee;
+import com.hpe.training.entity.Laptop;
+import com.hpe.training.utils.HibernateUtil;
+
+public class P09_AddEmployeesAndLaptops {
+	
+	public static void main(String[] args) {
+		SessionFactory factory = null;
+		Session session = null;
+		Transaction tx = null;
+		
+		try {
+			factory = HibernateUtil.getSessionFactory();
+			session = factory.openSession();
+			tx = session.beginTransaction();
+			
+			Laptop lt1 = new Laptop("ASD123", "Acer", "Travelmate");
+			Laptop lt2 = new Laptop("PQR222", "Lenovo", "Z560");
+			Laptop lt3 = new Laptop("C0R2J2", "Apple", "Macbook Pro");
+			
+			Employee e1 = new Employee("John", "Admin");
+			Employee e2 = new Employee("Miller", "Accounting");
+			Employee e3 = new Employee("Smith", "Production");
+			
+			
+			
+			
+			
+			
+			tx.commit();
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			tx.rollback();
+		} finally {
+			session.close();
+			factory.close();
+		}
+	}
+
+}

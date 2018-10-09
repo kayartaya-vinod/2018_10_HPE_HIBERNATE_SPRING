@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hpe.training.entity">
+	<class name="Category" table="categories">
+		<id name="id">
+			<generator class="identity" />
+		</id>
+		<!-- all scalar columns are mapped using 'property' element -->
+		<property name="name" />
+
+		<set name="products">
+			<key column="category_id" />
+			<one-to-many class="Product" />
+		</set>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+package com.hpe.training.entity;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@Entity
+public class Laptop {
+	@Id
+	private String serialNumber;
+	private String make;
+	private String model;
+
+	// mappedBy="laptop" --> Employee.laptop, which has mapping info
+	@OneToOne(mappedBy = "laptop", cascade = { CascadeType.MERGE, CascadeType.PERSIST })
+	private Employee ownedBy;
+	// Alternately, you can still use (instead of mappedBy="..")
+	// @JoinColumn(name="laptop_serial_number", unique=true)
+	// which corresponds to the foreign key in EMPLOYEE table
+
+	// convenient helper function to set the bidirectional association
+	public void setOwner(Employee employee) {
+		this.ownedBy = employee;
+		employee.setLaptop(this);
+	}
+}

@@ -1,0 +1,19 @@
+package com.hpe.training.programs;
+
+import org.hibernate.SessionFactory;
+
+import com.hpe.training.utils.HibernateUtil;
+
+public class P01_GetOneBrand {
+
+	public static void main(String[] args) {
+		try(
+			SessionFactory factory = HibernateUtil.getSessionFactory();
+		){
+			
+		}
+		finally {
+		}
+	}
+
+}

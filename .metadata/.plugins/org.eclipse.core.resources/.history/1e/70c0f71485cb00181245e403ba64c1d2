@@ -1,0 +1,37 @@
+package com.hpe.training.programs;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.hpe.training.entity.Skill;
+import com.hpe.training.utils.HibernateUtil;
+
+public class P10_AddEmployeeSkills {
+	public static void main(String[] args) {
+		SessionFactory factory = null;
+		Session session = null;
+		Transaction tx = null;
+		
+		try {
+			factory = HibernateUtil.getSessionFactory();
+			session = factory.openSession();
+			tx = session.beginTransaction();
+			
+			Skill s1 = new Skill("Java");
+			Skill s2 = new Skill("Python");
+			Skill s3 = new Skill("Hibernate");
+			Skill s4 = new Skill("Spring");
+			
+			
+			tx.commit();
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			tx.rollback();
+		} finally {
+			session.close();
+			factory.close();
+		}
+	}
+}

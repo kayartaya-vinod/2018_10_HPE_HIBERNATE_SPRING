@@ -1,0 +1,13 @@
+package com.hpe.training.utils;
+
+import org.hibernate.SessionFactory;
+
+public final class HibernateUtil {
+
+	// no one should instantiate this class
+	private HibernateUtil() {
+	}
+	
+	// singleton reference
+	private static SessionFactory factory;
+}

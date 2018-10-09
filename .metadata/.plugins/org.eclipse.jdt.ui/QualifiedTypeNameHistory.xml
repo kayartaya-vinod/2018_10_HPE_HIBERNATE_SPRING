@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.hibernate.cfg.Configuration"/>
+    <fullyQualifiedTypeName name="org.hibernate.boot.registry.StandardServiceRegistry"/>
+    <fullyQualifiedTypeName name="org.hibernate.boot.registry.StandardServiceRegistryBuilder"/>
+    <fullyQualifiedTypeName name="org.springframework.core.annotation.SynthesizedAnnotation"/>
+    <fullyQualifiedTypeName name="com.hpe.training.utils.HibernateUtil"/>
+    <fullyQualifiedTypeName name="com.hpe.training.entity.Brand"/>
+    <fullyQualifiedTypeName name="com.hpe.training.entity.Category"/>
+    <fullyQualifiedTypeName name="lombok.Getter"/>
+    <fullyQualifiedTypeName name="javax.persistence.Transient"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="lombok.ToString"/>
+    <fullyQualifiedTypeName name="com.hpe.training.entity.Product"/>
+    <fullyQualifiedTypeName name="com.hpe.training.entity.ContactInfo"/>
+    <fullyQualifiedTypeName name="javax.persistence.Embeddable"/>
+    <fullyQualifiedTypeName name="javax.persistence.Embedded"/>
+    <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="javax.persistence.Table"/>
+    <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
+    <fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
+    <fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
+    <fullyQualifiedTypeName name="org.hibernate.Transaction"/>
+    <fullyQualifiedTypeName name="org.hibernate.Session"/>
+    <fullyQualifiedTypeName name="com.hpe.training.entity.Customer"/>
+    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+    <fullyQualifiedTypeName name="com.hpe.training.entity.LineItem"/>
+    <fullyQualifiedTypeName name="com.hpe.training.programs.P08_AddOrderAndLineItems"/>
+    <fullyQualifiedTypeName name="com.hpe.training.entity.Order"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+</qualifiedTypeNameHistroy>

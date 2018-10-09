@@ -1,0 +1,18 @@
+package com.hpe.training.entity;
+
+import lombok.Data;
+
+@
+public class Product {
+	
+	private Integer id;
+	private Category category;
+	private String name;
+	private Brand brand;
+	private String quantityPerUnit;
+	private Double unitPrice;
+	private String picture;
+	private Double discount;
+	
+
+}

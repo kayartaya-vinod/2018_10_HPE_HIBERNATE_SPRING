@@ -1,0 +1,14 @@
+package com.hpe.training.entity;
+
+import javax.persistence.Embeddable;
+
+// by itself, this class is not mapped to any table
+// but, this can be part of another entity class (composition)
+@Embeddable
+public class ContactInfo {
+	private String address;
+	private String city;
+	private String state;
+	private String country;
+	private String phone;
+}

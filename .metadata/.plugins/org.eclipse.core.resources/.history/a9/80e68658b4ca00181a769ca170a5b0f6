@@ -1,0 +1,7 @@
+package com.hpe.training.utils;
+
+public final class HibernateUtil {
+
+	private HibernateUtil() {
+	}
+}

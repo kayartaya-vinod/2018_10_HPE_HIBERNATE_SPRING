@@ -1,0 +1,12 @@
+package com.hpe.training.entity;
+
+import javax.persistence.Embeddable;
+
+@Embeddable
+public class ContactInfo {
+	private String address;
+	private String city;
+	private String state;
+	private String country;
+	private String phone;
+}

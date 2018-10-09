@@ -1,0 +1,8 @@
+package com.hpe.training.utils;
+
+public final class HibernateUtil {
+
+	// no one should instantiate this class
+	private HibernateUtil() {
+	}
+}

@@ -1,0 +1,44 @@
+package com.hpe.training.utils;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
+
+import com.hpe.training.entity.Product;
+
+public final class HibernateUtil {
+
+	// no one should instantiate this class
+	private HibernateUtil() {
+	}
+
+	// singleton reference
+	private static SessionFactory factory;
+
+	public static SessionFactory getSessionFactory() {
+		if(factory==null) {
+			// empty configuration
+			Configuration cfg = new Configuration();
+			cfg.configure(); // reads hibernate.cfg.xml 
+			
+			// instead of an entry in hibernate.cfg.xml
+			cfg.addAnnotatedClass(Product.class);
+			
+			StandardServiceRegistry registry = 
+					new StandardServiceRegistryBuilder()
+					.applySettings(cfg.getProperties())
+					.build();
+			
+			factory = cfg.buildSessionFactory(registry);
+		}
+		return factory;
+	}
+}
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+package com.hpe.training.entity;
+
+public class Brand {
+	private Integer id;
+	private String name;
+
+	public Brand() {
+	}
+
+	public Brand(String name) {
+		this.name = name;
+	}
+
+}
