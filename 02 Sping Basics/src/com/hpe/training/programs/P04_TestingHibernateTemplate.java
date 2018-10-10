@@ -2,6 +2,9 @@ package com.hpe.training.programs;
 
 import java.util.List;
 
+import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.ProjectionList;
+import org.hibernate.criterion.Projections;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.orm.hibernate4.HibernateTemplate;
 
@@ -35,6 +38,18 @@ public class P04_TestingHibernateTemplate {
 		}
 		
 		// Hibernate's Criteria API
+		ProjectionList plist = Projections.projectionList();
+		plist.add(Projections.groupProperty("b.name"));
+		plist.add(Projections.rowCount());
+		
+		DetachedCriteria dc = DetachedCriteria.forClass(Product.class);
+		dc.createAlias("brand", "b");
+		dc.setProjection(plist);
+
+		List<Object[]> data = (List<Object[]>) template.findByCriteria(dc);
+		for (Object[] d : data) {
+			System.out.println(d[0] + " --> " + d[1]);
+		}
 		
 		ctx.close();
 		
