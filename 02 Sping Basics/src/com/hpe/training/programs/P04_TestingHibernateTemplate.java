@@ -46,6 +46,8 @@ public class P04_TestingHibernateTemplate {
 		dc.createAlias("brand", "b");
 		dc.setProjection(plist);
 
+		System.out.println();
+		System.out.println("Brandwise product count: ");
 		List<Object[]> data = (List<Object[]>) template.findByCriteria(dc);
 		for (Object[] d : data) {
 			System.out.println(d[0] + " --> " + d[1]);
