@@ -14,6 +14,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -45,8 +46,4 @@ public class Product {
 	private String picture;
 	private Double discount;
 	private String description;
-
-	public Product() {
-		System.out.println(">>>>> Product instnace created!");
-	}
 }
