@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<bean name="dbcp1,dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+		<!-- all properties are Apache DBCP specific -->
+		<property name="driverClassName" value="org.h2.Driver" />
+		<property name="url" value="jdbc:h2:tcp://localhost/~/hpe_training_2018_10" />
+		<property name="username" value="sa" />
+		<property name="password" value="" />
+		
+		<property name="maxTotal" value="100" />
+		<property name="minIdle" value="20" />
+		<property name="maxIdle" value="50" />
+		<property name="initialSize" value="20" />
+	</bean>
+
+	<bean name="dbcp" class="org.apache.commons.dbcp2.BasicDataSource">
+		<!-- all properties are Apache DBCP specific -->
+		<property name="driverClassName" value="org.h2.Driver" />
+		<property name="url" value="jdbc:h2:tcp://localhost/~/hpe_training_2018_10" />
+		<property name="username" value="sa" />
+		<property name="password" value="" />
+		
+		<property name="maxTotal" value="100" />
+		<property name="minIdle" value="20" />
+		<property name="maxIdle" value="50" />
+		<property name="initialSize" value="20" />
+	</bean>
+
+	<bean name="dao" 
+		class="com.hpe.training.dao.impl.JdbcProductDao"
+		autowire="byName">
+			
+		<!-- manual wiring using constructor -->
+		<!-- <constructor-arg ref="dbcp" /> -->
+		
+		<!-- manual wiring using property injection -->
+		<!-- <property name="dataSource" ref="dbcp" /> -->
+	</bean>
+
+	<!-- invokes the factory/static function Class.forName("org.h2.Driver") -->
+	<bean class="java.lang.Class" factory-method="forName">
+		<constructor-arg value="org.h2.Driver" />
+	</bean>
+	
+	<bean name="dao_3" class="com.hpe.training.dao.impl.JdbcProductDao">
+		<constructor-arg>
+			<bean class="java.sql.DriverManager" factory-method="getConnection">
+				<constructor-arg value="jdbc:h2:tcp://localhost/~/hpe_training_2018_10" />
+				<constructor-arg value="sa" />
+				<constructor-arg value="" />
+			</bean>
+		</constructor-arg>
+	</bean>
+
+	<bean name="dao_2" class="com.hpe.training.dao.impl.JdbcProductDao">
+		<!-- constructor based property injection -->
+		<constructor-arg value="org.h2.Driver" />
+		<constructor-arg value="jdbc:h2:tcp://localhost/~/hpe_training_2018_10" />
+		<constructor-arg value="sa" />
+		<constructor-arg value="" />
+	</bean>
+	
+	<bean name="dao_1" class="com.hpe.training.dao.impl.JdbcProductDao">
+		<!-- setter based injection -->
+		<!-- name of the property here is the name of the setter,
+		with out the "set" prefix. So, the first property listed below,
+		invokes the setDriverClassName() function with "org.h2.Driver" 
+		as the value/parameter -->
+		<property name="driverClassName" value="org.h2.Driver" />
+		<property name="url" value="jdbc:h2:tcp://localhost/~/hpe_training_2018_10" />
+		<property name="username" value="sa" />
+		<property name="password" value="" />
+	</bean>
+	
+</beans>

@@ -111,3 +111,9 @@ org.eclipse.recommenders.utils.Logs$LogTraceException
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1135)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:844)
+
+!ENTRY org.eclipse.jface.text 2 0 2018-10-09 16:05:46.039
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-10-09 16:05:46.040
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
