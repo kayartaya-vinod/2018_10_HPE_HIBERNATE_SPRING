@@ -2,6 +2,7 @@ package com.hpe.training.dao;
 
 import java.util.List;
 
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.hpe.training.entity.Product;
@@ -15,7 +16,7 @@ public interface ProductDao {
 
 	public Product getProductById(Integer id) throws DaoException;
 
-	@Transactional(readOnly = false)
+	@Transactional(readOnly = false, propagation=Propagation.REQUIRES_NEW)
 	public void updateProduct(Product product) throws DaoException;
 
 	@Transactional(readOnly = false)

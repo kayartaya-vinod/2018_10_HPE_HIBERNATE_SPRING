@@ -4,7 +4,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.hpe.training.dao.ProductDao;
 
-public class P02_SpringAsFactoryOfBeans {
+public class P03_SpringAsFactoryOfBeans {
 
 	public static void main(String[] args) throws Exception {
 

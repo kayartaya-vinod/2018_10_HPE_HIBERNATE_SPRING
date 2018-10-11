@@ -18,7 +18,6 @@ INDEX VERSION 1.130+/Users/vinodkumar/Documents/classroom_demos/2018_10_HPE_HIBE
 2871988787.index
 2792261085.index
 1133472910.index
-2830587230.index
 1283536301.index
 3075424234.index
 837741563.index

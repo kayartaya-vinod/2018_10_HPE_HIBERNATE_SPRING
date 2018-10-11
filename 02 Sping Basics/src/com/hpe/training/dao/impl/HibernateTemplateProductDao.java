@@ -2,8 +2,6 @@ package com.hpe.training.dao.impl;
 
 import java.util.List;
 
-import javax.naming.NoPermissionException;
-
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +41,9 @@ public class HibernateTemplateProductDao implements ProductDao {
 
 	@Override
 	public void updateProduct(Product product) throws DaoException {
+		if(product.getUnitPrice()<0) {
+			throw new DaoException("Product price cannot be negative");
+		}
 		template.merge(product);
 	}
 

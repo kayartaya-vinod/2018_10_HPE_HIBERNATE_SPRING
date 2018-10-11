@@ -19,10 +19,16 @@ public class P05_TestingHibernateTemplateProductDao {
 
 		Product p = dao.getProductById(1);
 		System.out.println("Name = " + p.getName());
-
+		System.out.println("Price = " + p.getUnitPrice());
+		
 		try {
 			p.setUnitPrice(p.getUnitPrice() + 1);
 			dao.updateProduct(p);
+			
+			p = dao.getProductById(1);
+			System.out.println("After update, ");
+			System.out.println("Price = " + p.getUnitPrice());
+			
 		} catch (DaoException e) {
 			System.out.println("OOPS! " + e.getMessage());
 		}

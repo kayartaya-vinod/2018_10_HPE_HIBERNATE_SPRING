@@ -29,7 +29,8 @@ import com.hpe.training.entity.Product;
 // create AOP Proxy for transaction management
 @EnableTransactionManagement 
 
-@ComponentScan(basePackages = { "com.hpe.training.aspects", "com.hpe.training.dao" })
+@ComponentScan(basePackages = { "com.hpe.training.aspects", 
+		"com.hpe.training.dao",  "com.hpe.training.service" })
 @Configuration
 public class AppConfig6 {
 	
