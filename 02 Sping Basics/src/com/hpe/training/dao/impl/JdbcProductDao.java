@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.sql.DataSource;
 
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Component;
 
 import com.hpe.training.dao.DaoException;
 import com.hpe.training.dao.ProductDao;
+import com.hpe.training.entity.Product;
 
 @Component("dao") // @Repository, @Service, @Controller, @RestController, @Configuration
 public class JdbcProductDao implements ProductDao {
@@ -33,7 +35,6 @@ public class JdbcProductDao implements ProductDao {
 	private Connection conn;
 
 	public JdbcProductDao() {
-		System.out.println("JdbcProductDao() called");
 	}
 
 	public JdbcProductDao(String driverClassName, String url, String username, String password) {
@@ -105,6 +106,46 @@ public class JdbcProductDao implements ProductDao {
 		} catch (Exception ex) {
 			throw new DaoException(ex); // exception funnelling
 		}
+	}
+
+	@Override
+	public void addProduct(Product product) throws DaoException {
+		throw new DaoException("Method not implemented yet!");
+	}
+
+	@Override
+	public Product getProductById(Integer id) throws DaoException {
+		throw new DaoException("Method not implemented yet!");
+	}
+
+	@Override
+	public void updateProduct(Product product) throws DaoException {
+		throw new DaoException("Method not implemented yet!");
+	}
+
+	@Override
+	public void deleteProduct(Integer id) throws DaoException {
+		throw new DaoException("Method not implemented yet!");
+	}
+
+	@Override
+	public List<Product> getAllProducts() throws DaoException {
+		throw new DaoException("Method not implemented yet!");
+	}
+
+	@Override
+	public List<Product> getProductsByBrand(Integer brandId) throws DaoException {
+		throw new DaoException("Method not implemented yet!");
+	}
+
+	@Override
+	public List<Product> getProductsByCategory(Integer categoryId) throws DaoException {
+		throw new DaoException("Method not implemented yet!");
+	}
+
+	@Override
+	public List<Product> getProductsByPriceRange(Double min, Double max) throws DaoException {
+		throw new DaoException("Method not implemented yet!");
 	}
 
 }

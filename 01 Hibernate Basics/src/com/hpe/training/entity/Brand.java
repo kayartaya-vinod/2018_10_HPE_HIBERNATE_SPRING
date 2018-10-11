@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "brands")
-public class Brand {
+public class Brand implements Comparable<Brand> {
 
 	// by default Hibernate maps all the fields of this class to
 	// respective columns of the corresponding table (brands)
@@ -61,6 +61,11 @@ public class Brand {
 	@Override
 	public String toString() {
 		return "Brand [id=" + id + ", name=" + name + "]";
+	}
+
+	@Override
+	public int compareTo(Brand other) {
+		return this.id-other.id;
 	}
 
 }
