@@ -435,3 +435,8 @@
 2018-10-12 16:09:41,541 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2018-10-12 16:09:41,543 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2018-10-12 16:09:41,543 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vinodkumar/Documents/classroom_demos/2018_10_HPE_HIBERNATE_SPRING/04 SpringBoot2/src/test/resources
+2018-10-12 16:12:17,187 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-12 16:12:17,188 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-10-12 16:12:17,189 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-10-12 16:12:17,191 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-10-12 16:12:17,191 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vinodkumar/Documents/classroom_demos/2018_10_HPE_HIBERNATE_SPRING/04 SpringBoot2/src/test/resources
