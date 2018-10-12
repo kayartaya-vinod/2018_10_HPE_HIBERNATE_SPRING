@@ -20,7 +20,7 @@ public class P06_PropagationRulesExample {
 		System.out.println("mgr is an instanceof : " + mgr.getClass());
 
 		Integer[] ids = { 1, 2, 3 };
-		Double[] incs = { 1.0, -44441.0, 1.0 };
+		Double[] incs = { 1.0, -4444.0, 1.0 };
 
 		printProductPrices(dao, ids);
 		try {
